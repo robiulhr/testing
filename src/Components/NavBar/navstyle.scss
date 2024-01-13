@@ -1,0 +1,223 @@
+@import "../../Partials/reset";
+
+
+nav {
+    background-color: $hero-color;
+    color: $color;
+    font-size: $font-size;
+    width: 100%;
+    height: 6rem;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+
+    .Logo {
+        width: 30%;
+
+        img {
+            min-width: 100px;
+            max-width: 150px;
+
+        }
+    }
+
+    ul {
+        display: flex;
+        width: 70%;
+        justify-content: space-evenly;
+        padding-left: 0;
+
+
+        li {
+            list-style: none;
+
+
+            a {
+                text-decoration: none;
+                color: $blur;
+
+                :hover {
+                    color: $accent-color;
+                    font-weight: 600;
+                }
+            }
+
+            :hover {
+                transition: 0.7s;
+                transform: scale(1.1);
+                margin: 0 3px;
+                border-radius: 10px;
+            }
+        }
+
+        li+li {
+            margin-left: 5px;
+        }
+
+    }
+
+    button {
+        background-color: $accent-color;
+        border: none;
+        border-radius: 20px;
+        width: 20%;
+        padding: 10px;
+        margin-left: 100px;
+
+
+        a {
+            text-decoration: none;
+            color: $white;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        :hover {
+            background-color: $accent-orange;
+            transition: 0.7s;
+            transform: scale(1.05);
+
+            a {
+                color: $blur;
+                transition: 0.7s;
+            }
+        }
+    }
+
+    .icons {
+
+        .burger-menu {
+            display: none;
+            width: 80px;
+            cursor: pointer;
+            height: 60px;
+            z-index: 100;
+            position: absolute;
+            top: 23px;
+            right: 0;
+            pointer-events: none;
+
+            & span {
+                display: block;
+                background-color: $white;
+                width: 60%;
+                height: 6px;
+                margin: 8px auto;
+                border-radius: 10px;
+            }
+        }
+
+        .cancel-menu {
+            @extend .burger-menu;
+
+            & .left,
+            & .right {
+                background-color: red;
+            }
+
+            & .left {
+                position: relative;
+                top: 12px;
+                transform: rotate(-45deg);
+            }
+
+            & .right {
+                position: relative;
+                top: 0px;
+                transform: rotate(45deg);
+            }
+        }
+
+    }
+
+
+}
+
+
+@include mobile {
+    .responsive_nav {
+        position: relative;
+        .icons {
+            .burger-menu {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .cancel-menu {
+                display: block;
+                pointer-events: all;
+            }
+        }
+
+        ul {
+            display: block;
+        }
+    }
+
+    nav {
+        display: block;
+        height: fit-content;
+        padding: 0;
+        position: relative;
+
+        button {
+            display: none;
+        }
+
+        .Logo {
+            width: 30%;
+
+            img {
+                width: 100px;
+                max-width: 150px;
+                height: 100px;
+            }
+        }
+
+        ul {
+            width: 100vw;
+            position: absolute;
+            background-color: $hero-color;
+            display: none;
+
+            &> :nth-child(1) {
+                border-top: 1px solid black;
+            }
+
+            li {
+                @include flex(column, center, center);
+                border-bottom: 1px solid black;
+                padding: 20px 0px;
+
+                a {
+                    @include flex(column, center, center);
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            li+li {
+
+                margin-left: 0;
+            }
+        }
+
+        .icons {
+            .burger-menu {
+                display: block;
+                pointer-events: all;
+            }
+
+            .cancel-menu {
+                display: none;
+                pointer-events: none;
+            }
+        }
+
+
+    }
+}

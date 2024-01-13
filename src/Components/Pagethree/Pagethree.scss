@@ -1,0 +1,152 @@
+@import "../../Partials/reset";
+
+.Pagethree__container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    background-color: $third-page;
+    overflow: hidden;
+
+
+    .pagethree__design__one,
+    .pagethree__design__two {
+        position: absolute;
+
+        img {
+            width: 200px;
+        }
+    }
+
+    .pagethree__design__one {
+        bottom: 0;
+        right: 0;
+    }
+
+    .pagethree__design__two {
+        top: 30%;
+        opacity: 0.5;
+    }
+
+    .Left__img {
+        margin-top: 70px;
+        margin-left: 13vw;
+        margin-bottom: 70px;
+        flex-shrink: 10;
+
+        img {
+            width: 500px;
+            height: 350px;
+        }
+    }
+
+    .Right__text {
+        margin-top: 58px;
+        margin-right: 7vw;
+        margin-left: 50px;
+        color: $white;
+
+        .Pagethree__header {
+            font-size: 3rem;
+            font-weight: 600;
+            width: 450px;
+        }
+
+        .Pagethree__Description {
+            margin-right: 150px;
+            text-align: justify;
+
+        }
+
+        .Pagethree__Description,
+        ul,
+        button {
+            margin-top: 20px;
+        }
+
+        ul {
+            padding: 0;
+            list-style-position: inside;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 50px;
+            background-color: $accent-color;
+            border: none;
+            border-radius: 20px;
+            text-transform: uppercase;
+
+
+            a {
+                text-decoration: none;
+                color: $white;
+                font-weight: 700;
+                font-size: 1.3rem;
+                letter-spacing: 1.4px;
+
+            }
+
+            &:hover {
+                background-color: $accent-orange;
+                transition: 0.7s;
+                transform: scale(1.05);
+                text-transform: uppercase;
+
+                a {
+                    color: $blur;
+                    transition: 0.7s;
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .Pagethree__container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 45px;
+
+        .pagethree__design__one,
+        .pagethree__design__two {
+            img {
+                width: 100px;
+            }
+        }
+
+        .pagethree__design__two {
+            top: 10%;
+            left: 0;
+        }
+
+        .Left__img {
+            margin: 0;
+
+            img {
+                width: 80vw;
+                height: 30vh;
+                border-radius: 10px;
+            }
+        }
+
+        .Right__text {
+            margin: 0;
+
+            .Pagethree__header {
+                width: fit-content;
+                font-size: 2rem;
+            }
+
+            .Pagethree__Description {
+                margin: 0;
+                margin-top: 20px;
+                font-size: 17px;
+            }
+
+            ul {
+                font-size: 17px;
+                letter-spacing: 1.5px;
+            }
+        }
+    }
+}

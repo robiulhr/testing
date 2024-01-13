@@ -1,0 +1,116 @@
+@import "../../Partials/reset";
+
+.footer__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    background-color: $third-page;
+
+
+
+    .footer__left {
+        margin-left: 80px;
+
+        img {
+            width: 150px;
+            height: 150px;
+
+        }
+    }
+
+    .footer__design {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        img {
+            width: 80px;
+        }
+
+    }
+
+    .footer__right {
+        width: 50%;
+        margin-left: 80px;
+
+        .divs {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+
+            li {
+                list-style-type: none;
+
+                a {
+                    color: $blur;
+                    text-decoration: none;
+                    font-size: 1.5rem;
+
+                    &:hover {
+                        text-decoration: underline;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .footer__container {
+        display: block;
+        width: 100%;
+        padding: 0px 25px;
+
+        .footer__left {
+            margin: 0;
+
+            img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        .footer__design {
+            left: 80%;
+            top: 0;
+
+            img {
+                width: 70px;
+            }
+        }
+
+        .footer__right {
+            margin: 0;
+            width: 100%;
+
+            .divs {
+                width: 100%;
+
+                li {
+
+                    a {
+                        font-size: 1.05rem;
+                    }
+                }
+            }
+
+            .icons {
+                padding: 20px 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .twitter,
+                .github,
+                .linkedin {
+                    & :hover {
+                        scale: 1.1;
+                        transition: 400ms;
+                    }
+                }
+            }
+        }
+    }
+}

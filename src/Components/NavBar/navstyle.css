@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: #05d3bc;
+  color: white;
+  font-size: 1.5rem;
+  width: 100%;
+  height: 6rem;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+nav .Logo {
+  width: 30%;
+}
+nav .Logo img {
+  min-width: 100px;
+  max-width: 150px;
+}
+nav ul {
+  display: flex;
+  width: 70%;
+  justify-content: space-evenly;
+  padding-left: 0;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #02414c;
+}
+nav ul li a :hover {
+  color: #c65919;
+  font-weight: 600;
+}
+nav ul li :hover {
+  transition: 0.7s;
+  transform: scale(1.1);
+  margin: 0 3px;
+  border-radius: 10px;
+}
+nav ul li + li {
+  margin-left: 5px;
+}
+nav button {
+  background-color: #c65919;
+  border: none;
+  border-radius: 20px;
+  width: 20%;
+  padding: 10px;
+  margin-left: 100px;
+}
+nav button a {
+  text-decoration: none;
+  color: #f9fdff;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+nav button :hover {
+  background-color: #f85c05;
+  transition: 0.7s;
+  transform: scale(1.05);
+}
+nav button :hover a {
+  color: #02414c;
+  transition: 0.7s;
+}
+nav .icons .burger-menu, nav .icons .cancel-menu {
+  display: none;
+  width: 80px;
+  cursor: pointer;
+  height: 60px;
+  z-index: 100;
+  position: absolute;
+  top: 23px;
+  right: 0;
+  pointer-events: none;
+}
+nav .icons .burger-menu span, nav .icons .cancel-menu span {
+  display: block;
+  background-color: #f9fdff;
+  width: 60%;
+  height: 6px;
+  margin: 8px auto;
+  border-radius: 10px;
+}
+nav .icons .cancel-menu .left, nav .icons .cancel-menu .right {
+  background-color: red;
+}
+nav .icons .cancel-menu .left {
+  position: relative;
+  top: 12px;
+  transform: rotate(-45deg);
+}
+nav .icons .cancel-menu .right {
+  position: relative;
+  top: 0px;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 850px) {
+  .responsive_nav {
+    position: relative;
+  }
+  .responsive_nav .icons .burger-menu, .responsive_nav nav .icons .cancel-menu, nav .responsive_nav .icons .cancel-menu {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .responsive_nav .icons .cancel-menu {
+    display: block;
+    pointer-events: all;
+  }
+  .responsive_nav ul {
+    display: block;
+  }
+  nav {
+    display: block;
+    height: fit-content;
+    padding: 0;
+    position: relative;
+  }
+  nav button {
+    display: none;
+  }
+  nav .Logo {
+    width: 30%;
+  }
+  nav .Logo img {
+    width: 100px;
+    max-width: 150px;
+    height: 100px;
+  }
+  nav ul {
+    width: 100vw;
+    position: absolute;
+    background-color: #05d3bc;
+    display: none;
+  }
+  nav ul > :nth-child(1) {
+    border-top: 1px solid black;
+  }
+  nav ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    padding: 20px 0px;
+  }
+  nav ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  nav ul li + li {
+    margin-left: 0;
+  }
+  nav .icons .burger-menu, nav .icons .cancel-menu {
+    display: block;
+    pointer-events: all;
+  }
+  nav .icons .cancel-menu {
+    display: none;
+    pointer-events: none;
+  }
+}/*# sourceMappingURL=navstyle.css.map */
