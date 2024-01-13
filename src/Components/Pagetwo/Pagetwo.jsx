@@ -1,5 +1,5 @@
 import React from 'react'
-import './Pagetwo.css'
+import "./Pagefour.css";
 import spiral from '/imgs/Designs/Design2.png';
 import claw from '/imgs/Designs/Design1.png';
 import scissors from '/imgs/Icon/scissors-solid.svg';
